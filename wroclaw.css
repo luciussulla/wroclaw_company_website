@@ -1,0 +1,771 @@
+/* Variables */ 
+
+* {
+  --margin-between-sections: 15rem; 
+  --top-bottom-padding-within-sections: 10rem; 
+  --nav-font-color: #fff;
+  --h1-size: 3em; 
+  --subhead-size: 1.5em; 
+  --h1-size-small: 2rem; 
+  --h2-size: 2.2rem; 
+  --h3-size: 1.2rem; 
+  --h4-size: 2.2rem; 
+  --service-icons-color: black; 
+  --article-background: rgb(208, 39, 39);
+  --hero-stripes-color: rgba(208, 39, 39, .6); 
+  /* --line-color: #cfbc11; */
+  /* small hero images */ 
+  --small-hero-image-width: 15vw; 
+  --small-hero-image-color-1: rgba(0,0,0,0); 
+  --small-hero-image-color-2: rgba(0,0,0,0);      
+}
+
+a {
+  color: #333;  
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  padding: 0; 
+  margin: 0; 
+  font-size: 1rem; 
+  font-weight: 300; 
+}
+
+#page-top {
+  position: relative;
+}
+
+.wrapper {
+  max-width: 1250px; 
+  margin: 0rem 2rem 2rem 2rem; 
+}
+
+/* LOGO */ 
+.logo-red { 
+  color: rgb(208, 39, 39);
+}
+
+.logo {
+  position: relative; 
+  top: 1.5em; /* burdgers top and its padding so as to make it parlell*/ 
+  text-decoration: none; 
+  color: white; 
+}
+
+/* nav */ 
+nav {
+  position: fixed; 
+  top: 0; 
+  bottom :0; 
+  right: 0; 
+  width: 50%; 
+  background: #333; 
+  transform: translateX(0); 
+  transition: transform .5s ease-in-out;
+  z-index: 2; 
+
+}  
+
+nav ul {
+  list-style-type: none; 
+  padding: 3em 0 0 0; 
+  margin: 0; 
+}
+
+nav ul li a {
+  display: block; 
+  font-size: 1.3em; 
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1em 1em;
+  color: var(--nav-font-color);
+}
+
+nav ul li a:hover {
+  background: black; 
+}
+
+.hide-nav {
+  transform: translateX(100%);
+}
+
+.x-symbol {
+  position: relative; 
+  top:   1em;
+  left: 70%;  
+  display: block; 
+  border: 1px solid #666; 
+  border-radius: 50%;
+  width: 35px; 
+  height: 35px; 
+  line-height: 35px; 
+  text-align: center;
+  color: var(--nav-font-color);
+}
+
+/* hamburger */ 
+.hamburger {
+  position: absolute; 
+  top: 1em; 
+  right: 0em; 
+  
+  width: 3.5em; 
+  padding: .5em; 
+  z-index: 1; 
+}
+
+/* Hamburger line is inside unstyled hamburger div */ 
+.hamburger-line {
+  display: block; 
+  width: 2.8em; 
+  height: 4px;
+  background-color: var(--nav-font-color); 
+  border-radius: 3px; 
+  margin: .4em  0em; 
+}
+
+/* hero heading and subheading */
+.hero  {
+  height: 50vh; 
+  color: #fff;
+}
+
+.hero-image-small-screen {
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+
+  width: 100%;
+  height: 70vh; 
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../img/balkany.jpg'); 
+  background-position: center;
+  background-size: cover;   
+
+  flex-grow: 1; 
+  z-index: -1; 
+} 
+
+.hero-img-container {
+  display: none; 
+}
+
+.hero h1 {
+  font-size: var(--h1-size-small); 
+  margin-top: 5rem; 
+  line-height: 3.3rem;
+  font-weight: 300; 
+  text-transform: uppercase;
+}
+
+.subhead {
+  font-size: 1.4rem;
+  font-weight: 300; 
+}
+
+/*Article */ 
+.article-one {
+  position: relative; 
+  background-color: var(--article-background); 
+  color: white; 
+  padding: 3rem 0; 
+  justify-content: center; 
+}
+
+.article-one .dot {
+  display: none; 
+  position: absolute; 
+  border-radius: 50%;
+  background-color: #c58e5e;
+  z-index: -2; 
+}
+
+.article-one .dot-one {
+  top: 300px; 
+  left: -30px; 
+  width: 150px; 
+  height: 150px;
+}
+
+.article-one .dot-two {
+  top: 600px; 
+  width: 45px; 
+  height: 45px; 
+  right: 20px; 
+}
+
+.article-left ul {
+  text-align: left;
+}
+
+.city-photo {
+  max-width: 280px; 
+}
+
+.article-one h2 {
+ font-size: var(--h2-size); 
+}
+
+/* Services */ 
+
+.services-left {
+  display: none; 
+}
+
+h2.services-title {
+  font-size: var(--h2-size); 
+}
+
+i.icon {
+  border: 1px solid var(--service-icons-color); 
+  border-radius: 50%; 
+  display: inline-block; 
+
+  font-size:30px; 
+  height: 50px; 
+  width: 50px; 
+
+  line-height: 50px; 
+  vertical-align: middle;
+
+  color: var(--service-icons-color); 
+  border: 1px solid var(--service-icons-color);
+}
+
+#services, .services-row {
+  text-align: center;
+}
+
+.article-two {
+  margin-top: 3em; 
+}
+
+.hide-on-small-screen {
+  display: none; 
+}
+
+/* Wroclaw card */ 
+.wroclaw-card img:nth-of-type(1) {
+  width: 280px; 
+}
+
+.wroclaw-card img:nth-of-type(2) {
+  /* position: absolute; 
+  top: 30%;  */
+  width: 280px; 
+}
+
+/* Trusted Clients / zaufali nam */ 
+#clients {
+  padding-top: 4em; 
+}
+
+.clients-header {
+  font-size: var(--h3-size); 
+  margin-bottom: 3.5em;
+  text-align: center;
+}
+
+.clients-image {
+  width: 100%;          
+}
+
+.clients-image img {
+  width: 100%;  
+}
+
+section .wrapper {
+  text-align: center;
+  font-size: .9em; 
+}
+
+/* Contact Info */ 
+#contact {
+  width: 100%; 
+  padding: 4em 0 80px 0px;  
+  background-color: rgb(208, 39, 39);
+  color: black
+} 
+
+.row {
+  padding: .5em 0.2em; 
+  display: flex; 
+  justify-content: center;
+  flex-wrap: wrap; 
+  font-size: 1em;
+}
+
+.contact-info {
+  padding: .5em; 
+}
+
+.follow {
+  padding: 1.2em 2em; 
+  background-color: white;
+  margin-top: 20px; 
+
+}
+
+.contact-title { 
+  font-size: var(--h3-size); 
+  color: white; 
+}
+
+/* TABLETS */ 
+  @media (min-width: 800px) {
+
+  .wrapper {
+    margin: 0 auto;
+  } 
+  
+  section.section-padding-top {
+    padding: var(--top-bottom-padding-within-sections) 0px;
+  } 
+
+  .hero-image-small-screen {
+    height: 80vh;
+  } 
+
+  .hero-img-container {
+    display: block; 
+  }
+
+  .logo {
+    font-size: 1.3em; 
+  } 
+  .hero  {
+    height: 40vh; 
+    color: #fff;
+  }
+  
+  .hero h1 {
+    font-size: 2rem; 
+    margin-top: 4em; 
+    line-height: 3.3rem;
+  }
+
+  .services-left {
+    display: block; 
+  }
+
+  .article-two {
+    text-align: center;
+  }
+}  
+
+@media (min-width: 950px) {
+
+  section.section-padding-top {
+    padding: var(--top-bottom-padding-within-sections) 0px;
+  }
+
+  p {
+    line-height: 1.6em; 
+    letter-spacing: .12em;
+    font-size: 1em; 
+    text-align: justify; 
+  }
+
+  nav ul li a, .logo, .subhead {
+    font-size: 1.2em;
+    text-transform: uppercase !important;
+    letter-spacing: .1em;
+  }
+
+  .logo  {
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+
+  .hero {
+    height: 100vh; 
+    width: 40%;  
+  }
+
+  .hero h1 {
+    font-size: 3.5em; 
+    margin-top: 3em; 
+    line-height: 1em;
+    letter-spacing: .1em;
+  }
+
+  .subhead {
+    color: black;
+  }
+
+  h2.title, h3.title, h4.title {
+    line-height: 1.6em; 
+    letter-spacing: .12em;
+    text-transform: uppercase; 
+    font-weight: 300; 
+  }
+
+  h2.title {
+    font-size: var(--h2-size); 
+    margin: 0 auto; 
+    max-width: 500px;  
+    margin-bottom: 10rem; 
+    
+  }
+
+  h3.title {
+    font-size: var(--h3-size); 
+  }
+
+  h4.title {
+    font-size: var(--h4-size); 
+  }
+
+/* .stripes {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  height: 105vh; 
+  width: 100%; 
+
+  background: linear-gradient(
+    90deg, 
+    var(--hero-stripes-color) 0%, 
+    var(--hero-stripes-color) 25%, 
+    white 25%, 
+    white 50%, 
+    var(--hero-stripes-color) 50%, 
+    var(--hero-stripes-color) 75%, 
+    white 75%, 
+    white 100%
+  ); 
+
+  z-index: -10; 
+  background-size: 700px 700px; 
+  background-repeat: repeat;
+
+  margin-left: -7vh; 
+}   */
+
+ .red-square {
+  display: inline-block; 
+  color: white;
+  background-color: var(--article-background); 
+ } 
+
+ .red-square-heading {
+  padding: .12em .15em; 
+  display: inline-block; 
+ }
+
+ .red-square-subhead {
+  padding: .12em .15em; 
+ }
+
+  nav ul li a {
+    color: var(--article-background) !important;
+  }
+
+  .hero-image-small-screen {
+    display: none; 
+  }
+
+  .hero-img-container {
+    margin-top: 3vh; 
+    margin-right: 3vh; 
+    position: absolute; 
+    right: 0;
+    top: 0; 
+    height: 102vh; 
+    width: 50%; 
+
+    display: flex;
+    justify-content: space-between;
+    align-content: space-evenly; 
+    flex-wrap: wrap;
+    gap: 2em; 
+  }
+
+  .hero-image {
+    box-shadow: 0px 0px 30px rgba(0,0,0,.2);
+    width: var(--small-hero-image-width);
+    height: var(--small-hero-image-width);
+  }
+
+  .hero-image-1 {
+    /* position: absolute; */ 
+    background: linear-gradient(var(--small-hero-image-color-1), var(--small-hero-image-color-2)), url('../img/balkany.jpg'); 
+    background-position: center;
+    background-size: cover;   
+    flex-grow: 1; 
+
+  } 
+
+  .hero-image-2 {
+    /* position: absolute;  */
+    width: var(--small-hero-image-width);
+    height: var(--small-hero-image-width);
+    background: linear-gradient(var(--small-hero-image-color-1), var(--small-hero-image-color-2)), url('../img/kongres.jpg'); 
+    background-position: center;
+    background-size: cover;   
+    flex-grow: 1; 
+  }
+
+  .hero-image-3 {
+    /* position: absolute;  */
+    width: var(--small-hero-image-width);
+    height: var(--small-hero-image-width);
+    background: linear-gradient(var(--small-hero-image-color-1), var(--small-hero-image-color-2)), url('../img/poznan_szczyt.jpg'); 
+    background-position: center;
+    background-size: cover;   
+ 
+    flex-grow: 1;   
+    margin-top: -60px; 
+  }
+
+  .hero-image-4 { 
+    /* position: absolute;  */
+    width: var(--small-hero-image-width);
+    height: var(--small-hero-image-width);
+    background: linear-gradient(var(--small-hero-image-color-1), var(--small-hero-image-color-2)), url('../img/dendro.jpg'); 
+    background-position: center;
+    background-size: cover;   
+
+    flex-grow: 1; 
+    margin-top: -60px; 
+  }
+
+  .logo {
+    color: black; 
+    display: inline-block; 
+  }
+
+  /* nav */ 
+  nav {
+    position: absolute;  
+    right: .5rem; 
+    top: 1rem; 
+
+    background: none; 
+    transform: translateX(0); 
+    height: 2rem; 
+    text-align: right;
+  }  
+
+  nav ul {
+    margin: 0; 
+    padding: 0; 
+    list-style-type: none;  
+  }
+
+  nav ul li {
+    display: inline-block; 
+  }
+
+  nav ul li a {
+    margin: 0; 
+    padding: 0; 
+    display: inline-block; 
+    font-size: 1em; 
+    text-decoration: none;
+    text-transform: none;
+    padding: 1em 1em;
+    color: var(--nav-font-color);
+  }
+
+  nav ul li a:hover {
+    background: none;  
+    text-decoration: underline;
+  }
+
+  .hide-nav {
+    transform: translateX(0%);
+  }
+
+  .x-symbol {
+    display: none; 
+  }
+
+  /* Hamburger */ 
+  .hamburger {
+    display: none; 
+  }
+
+  /* Article */ 
+
+  .sub-article {
+    margin: 5rem 0; 
+    display: flex; 
+  }
+
+  .article-left {
+    background-color: white; 
+    color: #000; 
+    padding: 3rem; 
+  }
+
+  .article-right img{
+    height: 100%; 
+    object-fit: cover;
+  }
+
+  .order-2 {
+    order: 2; 
+  }
+
+  .order-1 {
+    order: 1;
+  }
+
+  .article-right img.city-photo {
+    filter: grayscale(30%); 
+    max-width: 500px; 
+    object-fit: cover;
+  }
+
+
+  /* Services */
+  #services h2 {
+    margin-bottom: 3em;
+  }
+
+  #services h3 {
+    padding-bottom: .5em; 
+    border-bottom: 1px dashed var(--article-background); 
+  }
+
+  .services-container {
+    display :flex;
+  }
+
+  .services-right {
+    /* flex-grow: 2; */
+    flex-basis: 53vw; 
+  }
+
+  .services-left {
+    /* flex-grow: 3;  */
+    flex-basis: 47vw; 
+  }
+
+  .services-photo {
+    max-width: 70%; 
+    margin: auto; 
+  }
+
+  .services-photo img {
+    width: 100%;  
+  }
+
+  .services-photo img:last-of-type  {
+    margin-top: 2em;
+  }
+
+  .services-col {
+    /* position: relative;  */
+    display: flex;
+    justify-content: space-around;
+  }
+
+  i.icon {
+    /* margin-right: -1em;  */
+    margin-top: .3em; 
+    border: 1px solid var(--article-background);   
+    border-radius: 50%; 
+    display: inline-block; 
+
+    font-size:40px; 
+    height: 60px; 
+    width: 60px; 
+
+    line-height: 60px; 
+    vertical-align: middle;
+
+    color: var(--article-background); 
+    border: 1px solid var(--article-background);
+  }
+
+  .services-text {
+    text-align: justify; 
+    flex-basis: 40vw; 
+  }
+
+  /* Article two */ 
+
+  /* Wroclaw */ 
+
+  .wroclaw-card {
+    width: 60vw; 
+    margin: 0 auto; 
+    position: relative; 
+  }
+
+  .wroclaw-card:nth-of-type(2) {
+    margin-top: 10rem; 
+  }
+
+  .wroclaw-card-title {
+    background-color: var(--article-background); 
+    color: white; 
+    width: 100%; 
+    height: 40%;
+    padding: .5em;  
+  }
+
+  h2.title.delete-h2-centering {
+    max-width: 0; 
+    margin: 0; 
+  }
+
+  .wroclaw-card-title h2.title span {
+    text-transform: uppercase;
+    display: block; 
+
+    font-size: 2.6em; 
+    text-align: left; 
+    line-height: 1.4em; 
+    letter-spacing: .2em;
+    font-weight: 300; 
+    /* border: 1px solid blue;  */
+    min-width: 30rem; 
+  }
+
+  .wroclaw-card-title h2 span:nth-of-type(3) {
+    margin-top: 2em; 
+    font-size: .5em; 
+  }
+
+  .wroclaw-card-text {
+    width: 70%; 
+    font-size: 1em; 
+    text-align: justify;
+    font-weight: 300; 
+  } 
+
+  .wroclaw-card img {
+    position: absolute; 
+    top: 4%;
+    transform: scale(1);
+    right: -13em; 
+
+    --webkit-filter: grayscale(50%); 
+    filter: grayscale(50%); 
+  }
+
+  .wroclaw-card img:nth-of-type(1) {
+    width: 40%; 
+  } 
+
+  .wroclaw-card img:nth-of-type(2) {
+    position: absolute; 
+    top: 30%; 
+    width: 40%; 
+  }
+
+  /* klienci */ 
+  #clients {
+    margin: 0 auto; 
+    width: 80%;
+  }
+
+}
